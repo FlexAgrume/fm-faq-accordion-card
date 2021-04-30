@@ -1,0 +1,218 @@
+/* --------- */
+/* Variables */
+/* --------- */
+
+:root {
+    --color-soft-violet: hsl(273, 75%, 66%);
+    --color-soft-blue: hsl(240, 73%, 65%);
+    --color-soft-red: hsl(14, 88%, 65%);
+    --color-very-dark-desatured-blue: hsl(238, 29%, 16%);
+    --color-very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --color-dark-grayish-blue: hsl(240, 6%, 50%);
+    --color-light-grayish-blue: hsl(240, 5%, 91%);
+    --font-weight-bold: 700;
+    --font-weight-regular: 400;
+}
+
+@keyframes sweep {
+    0%    {opacity: 0;}
+    100%  {opacity: 1;}
+}
+
+/* ---- */
+/* Base */
+/* ---- */
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 75%;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 12rem 0 6rem;
+    min-height: 100vh;
+    height: 100%;
+    display: -webkit-flex;
+	display: flex;
+    -webkit-justify-content: center;
+	justify-content:center;
+    -webkit-align-items: center;
+	align-items:center;
+    background-image: linear-gradient(var(--color-soft-violet), var(--color-soft-blue));
+    background-image: -webkit-linear-gradient(var(--color-soft-violet), var(--color-soft-blue));
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+@media screen and (min-width: 960px) {
+    body {
+        padding: 0;
+    }
+}
+
+/* --------- */
+/* Container */
+/* --------- */
+
+.component-wrapper {
+    position: relative;
+}
+
+.card {
+    width: 27.25rem;
+    border-radius: 2rem;
+    position: relative;
+    background: url(./img/bg-pattern-mobile.svg) white;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -webkit-box-shadow: 0 3.33333rem 3.33333rem -10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3.33333rem 3.33333rem -10px rgba(0, 0, 0, 0.25); 
+}
+
+@media screen and (min-width: 960px) {
+    .card {
+        width: 76.666rem;
+        height: 42rem;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: center;
+        justify-content:center;
+        background: url(./img/bg-pattern-desktop.svg) white;
+        background-position: -48rem 66%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+}
+
+/* -------- */
+/* FAQ card */
+/* -------- */
+
+/* Illustrations */
+
+.card__img-desktop, .cube {
+    display: none;
+}
+
+.card__img-mobile {
+    position: absolute;
+    top: -9rem;
+    right: 3.75rem;
+}
+
+@media screen and (min-width: 960px) {
+    .card__img-mobile {
+        display: none;
+    }
+
+    .card__img-desktop {
+        display: block;
+        align-self: center;
+        width: auto;
+        height: auto;
+        margin-left: -6.5rem;
+        z-index: 1;
+    }
+
+    .cube {
+        display: block;
+        width: auto;
+        height: auto;
+        position: absolute;
+        left: -7.75rem;
+        top: 17.084rem;
+        z-index: 2;
+    }
+}
+
+
+/* FAQ */
+
+.card__text-wrapper {
+    padding: 12rem 2rem 4rem 2rem;
+}
+
+.card__text-wrapper::-webkit-scrollbar {
+    background: transparent;
+    width: 0px;
+}
+
+.card__heading {
+    font-size: 2.666666rem;
+    color: var(--color-very-dark-desatured-blue);
+    text-align: center;
+    margin-bottom: 1.666666rem;
+}
+
+.faq__wrapper {
+    padding: 1.33333rem 0;
+    border-bottom: solid 1px var(--color-light-grayish-blue);
+}
+
+.faq__wrapper[open] .faq__question {
+    font-weight: 700;
+}
+
+.faq__question {
+    position: relative;
+    font-size: 1.08333rem;
+    color: var(--color-very-dark-grayish-blue);
+    list-style: none;
+}
+
+.faq__question:hover, .faq__question:active {
+    color: var(--color-soft-red);
+    cursor: pointer;
+}
+
+.faq__question::after {
+    content: url(./img/icon-arrow-down.svg);
+    position: absolute;
+    right: 0;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.faq__wrapper[open] .faq__question::after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.faq__answer {
+    color: var(--color-dark-grayish-blue);
+    margin-top: 1rem;
+    line-height: 1.5rem;
+}
+
+.faq__wrapper[open] .faq__answer {
+    animation: sweep .3s ease-in-out;
+}
+
+
+@media screen and (min-width: 960px) {
+    .card__text-wrapper {
+        padding: 6rem 4.666666rem 6rem 3rem;
+        margin-left: auto;
+        width: 50%;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+
+    .card__heading {
+        text-align: left;
+    }
+
+    .faq__question {
+        font-size: 1.166666rem;
+    }
+}
