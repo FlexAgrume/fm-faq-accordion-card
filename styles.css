@@ -142,11 +142,6 @@ body {
     padding: 12rem 2rem 4rem 2rem;
 }
 
-.card__text-wrapper::-webkit-scrollbar {
-    background: transparent;
-    width: 0px;
-}
-
 .card__heading {
     font-size: 2.666666rem;
     color: var(--color-very-dark-desatured-blue);
@@ -204,12 +199,32 @@ body {
         padding: 6rem 8rem 6rem 3rem;
         margin-left: auto;
         width: 50%;
-        overflow-y: scroll;
-        scrollbar-width: none;
     }
 
     .card__heading {
         text-align: left;
+    }
+
+    .faq {
+        max-height: 24rem;
+        overflow-y: auto;
+        -webkit-scrollbar-width: thin;
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-dark-grayish-blue) var(--color-light-grayish-blue);
+        overflow-x: hidden;
+        padding-right: 1rem;
+    }
+
+    .faq::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .faq::-webkit-scrollbar-thumb {
+        background: var(--color-dark-grayish-blue);
+    }
+    
+    .faq::-webkit-scrollbar-track {
+        background: var(--color-light-grayish-blue);
     }
 
     .faq__question {
