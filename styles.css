@@ -201,7 +201,7 @@ body {
 
 @media screen and (min-width: 960px) {
     .card__text-wrapper {
-        padding: 6rem 4.666666rem 6rem 3rem;
+        padding: 6rem 8rem 6rem 3rem;
         margin-left: auto;
         width: 50%;
         overflow-y: scroll;
