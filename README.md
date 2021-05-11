@@ -98,5 +98,5 @@ This challenge was an opportunity to discover :
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/flexagrume)
-- Twitter - [@yourusername](https://www.twitter.com/flexagrume)
+- Frontend Mentor - [@flexagrume](https://www.frontendmentor.io/profile/flexagrume)
+- Twitter - [@flexagrume](https://www.twitter.com/flexagrume)
